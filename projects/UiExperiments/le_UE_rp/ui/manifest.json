@@ -1,0 +1,22 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "Ui Test",
+    "name": "Ui Experiments",
+    "uuid": "b950d879-de66-4660-a6f3-349675b39828",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 26, 44]
+  },
+  "modules": [
+    {
+      "description": "Ui test",
+      "type": "resources",
+      "uuid": "8e50611e-481b-404c-afc6-9a671d4d39e8",
+      "version": [1, 0, 0]
+    }
+  ],
+  "metadata": {
+    "authors": ["LucasEducado"],
+    "product_type": "resource"
+  }
+}

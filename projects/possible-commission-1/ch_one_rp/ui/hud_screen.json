@@ -1,0 +1,174 @@
+{
+  "namespace": "hud",
+  "fade_base": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [
+      64,
+      64
+    ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "layer": 10,
+    "alpha": "$a",
+    "visible": "($atext = $tok)"
+  },
+  "alpha_host": {
+    "type": "panel",
+    "size": [
+      64,
+      64
+    ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$atext": "$actionbar_text",
+    "controls": [
+      {
+        "s0@hud.fade_base": {
+          "$a": 0.0,
+          "$tok": "a0"
+        }
+      },
+      {
+        "s1@hud.fade_base": {
+          "$a": 0.05,
+          "$tok": "a1"
+        }
+      },
+      {
+        "s2@hud.fade_base": {
+          "$a": 0.1,
+          "$tok": "a2"
+        }
+      },
+      {
+        "s3@hud.fade_base": {
+          "$a": 0.15,
+          "$tok": "a3"
+        }
+      },
+      {
+        "s4@hud.fade_base": {
+          "$a": 0.2,
+          "$tok": "a4"
+        }
+      },
+      {
+        "s5@hud.fade_base": {
+          "$a": 0.25,
+          "$tok": "a5"
+        }
+      },
+      {
+        "s6@hud.fade_base": {
+          "$a": 0.3,
+          "$tok": "a6"
+        }
+      },
+      {
+        "s7@hud.fade_base": {
+          "$a": 0.35,
+          "$tok": "a7"
+        }
+      },
+      {
+        "s8@hud.fade_base": {
+          "$a": 0.4,
+          "$tok": "a8"
+        }
+      },
+      {
+        "s9@hud.fade_base": {
+          "$a": 0.45,
+          "$tok": "a9"
+        }
+      },
+      {
+        "s10@hud.fade_base": {
+          "$a": 0.5,
+          "$tok": "a10"
+        }
+      },
+      {
+        "s11@hud.fade_base": {
+          "$a": 0.55,
+          "$tok": "a11"
+        }
+      },
+      {
+        "s12@hud.fade_base": {
+          "$a": 0.6,
+          "$tok": "a12"
+        }
+      },
+      {
+        "s13@hud.fade_base": {
+          "$a": 0.65,
+          "$tok": "a13"
+        }
+      },
+      {
+        "s14@hud.fade_base": {
+          "$a": 0.7,
+          "$tok": "a14"
+        }
+      },
+      {
+        "s15@hud.fade_base": {
+          "$a": 0.75,
+          "$tok": "a15"
+        }
+      },
+      {
+        "s16@hud.fade_base": {
+          "$a": 0.8,
+          "$tok": "a16"
+        }
+      },
+      {
+        "s17@hud.fade_base": {
+          "$a": 0.85,
+          "$tok": "a17"
+        }
+      },
+      {
+        "s18@hud.fade_base": {
+          "$a": 0.9,
+          "$tok": "a18"
+        }
+      },
+      {
+        "s19@hud.fade_base": {
+          "$a": 0.95,
+          "$tok": "a19"
+        }
+      },
+      {
+        "s20@hud.fade_base": {
+          "$a": 1.0,
+          "$tok": "a20"
+        }
+      }
+    ]
+  },
+  "alpha_host_factory": {
+    "type": "panel",
+    "factory": {
+      "name": "hud_actionbar_text_factory",
+      "control_ids": {
+        "hud_actionbar_text": "alpha_host@hud.alpha_host"
+      }
+    }
+  },
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_front",
+        "value": {
+          "alpha_host_factory@hud.alpha_host_factory": {}
+        }
+      }
+    ]
+  }
+}
