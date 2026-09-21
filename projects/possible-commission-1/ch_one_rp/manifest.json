@@ -1,0 +1,19 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "...",
+    "name": "possible comission 1",
+    "uuid": "652ec26c-c04c-454b-a3b4-9454cac85ca9",
+    "version": [1,0,0],
+    "min_engine_version": [1, 26, 40]
+  },
+  
+  "modules": [
+    {
+      "type": "resources",
+      "version": [1, 0, 0],
+      "uuid": "2889ca88-35b0-4aa7-9a43-c93bdf222d30",
+      "description": "..."
+    }
+  ]
+}
