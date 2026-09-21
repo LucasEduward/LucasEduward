@@ -7,6 +7,7 @@
 <meta name="description" content="Portfólio de Lucas Eduardo, desenvolvedor front-end.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 <style>
   :root {
     --bg: #0f1115;
@@ -33,7 +34,7 @@
   a { color: inherit; }
 
   .wrap {
-    max-width: 900px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 0 24px;
   }
@@ -98,7 +99,7 @@
 
   .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
   }
 
@@ -111,6 +112,67 @@
     flex-direction: column;
     gap: 10px;
     transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .media {
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    border: 1px dashed var(--border);
+    background: var(--bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 0 0 4px;
+  }
+
+  .media img, .media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .media .placeholder {
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+    padding: 12px;
+  }
+
+  .card details {
+    margin-top: 4px;
+  }
+
+  .card summary {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    list-style: none;
+    user-select: none;
+  }
+
+  .card summary::-webkit-details-marker { display: none; }
+
+  .card summary::before {
+    content: "▸ ";
+  }
+
+  .card details[open] summary::before {
+    content: "▾ ";
+  }
+
+  .card pre {
+    margin: 10px 0 0;
+    border-radius: 10px;
+    max-height: 320px;
+    overflow: auto;
+    font-size: 12.5px;
+  }
+
+  .card pre code.hljs {
+    padding: 14px;
+    border-radius: 10px;
   }
 
   .card:hover {
@@ -204,22 +266,114 @@
     <h2>Projetos</h2>
     <div class="projects">
       <div class="card">
+        <div class="media" data-slot="one-piece">
+          <span class="placeholder">Imagem/gif em breve</span>
+        </div>
         <span class="tag">HTML</span>
         <h3>Projeto One Piece</h3>
         <p>Página web construída com HTML, CSS e JavaScript como projeto de estudo front-end.</p>
         <a class="link" href="https://github.com/LucasEduward/Projeto-One-Piece-Final" target="_blank" rel="noopener">Ver no GitHub →</a>
+        <details>
+          <summary>Ver código</summary>
+          <pre><code class="language-html">&lt;div class="personagem selecionado"&gt;
+  &lt;img class="imagem" src="./src/imagens/personagem-monkey-d-luffy.png" alt="Personagem Monkey D. Luffy"&gt;
+  &lt;div class="conteudo"&gt;
+    &lt;i class="logo"&gt;&lt;/i&gt;
+    &lt;h2 class="nome-personagem"&gt;Monkey D. Luffy&lt;/h2&gt;
+    &lt;p class="descricao"&gt;
+      Luffy do Chapéu de Palha, como ficou conhecido, é o protagonista
+      do anime, e o fundador e capitão da tripulação Piratas do
+      Chapéu de Palha.
+    &lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;ul class="botoes"&gt;
+  &lt;li&gt;
+    &lt;button class="botao selecionado"&gt;
+      &lt;img src="./src/imagens/tripulacao-luffy.png" alt=""&gt;
+    &lt;/button&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </details>
       </div>
       <div class="card">
+        <div class="media" data-slot="ui-experiments">
+          <span class="placeholder">Imagem/gif em breve</span>
+        </div>
         <span class="tag">Minecraft Addon</span>
         <h3>UI Experiments</h3>
         <p>Addon de Minecraft Bedrock explorando UI customizada (HUD e telas próprias) via resource pack.</p>
         <a class="link" href="https://github.com/LucasEduward/LucasEduward/tree/main/projects/UiExperiments" target="_blank" rel="noopener">Ver no GitHub →</a>
+        <details>
+          <summary>Ver código</summary>
+          <pre><code class="language-json">{
+  "namespace:": "hud",
+
+  "root_panel": {
+    "modifications": [
+      {
+        "array_name": "controls",
+        "operation": "insert_back",
+        "value": [
+          {
+            "ui_test": {
+              "type": "image",
+              "layer": 3,
+              "texture": "textures/ui/NormalButtonStroke",
+              "size": ["100%", "100%"],
+              "anchor_from": "center",
+              "anchor_to": "center"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}</code></pre>
+        </details>
       </div>
       <div class="card">
+        <div class="media" data-slot="hud-vignette">
+          <span class="placeholder">Imagem/gif em breve</span>
+        </div>
         <span class="tag">Minecraft Addon · Scripting API</span>
         <h3>Custom HUD Screen Vignette Effect</h3>
         <p>Teste pra tentar simular, via UI customizada e scripting, o efeito de vinheta que o Minecraft vanilla mostra quando o jogador está dentro de neve em pó (powder snow).</p>
         <a class="link" href="https://github.com/LucasEduward/LucasEduward/tree/main/projects/possible-commission-1" target="_blank" rel="noopener">Ver no GitHub →</a>
+        <details>
+          <summary>Ver código</summary>
+          <pre><code class="language-javascript">import { system, world } from "@minecraft/server";
+
+let debugOn = false;
+const lastStep = new Map();
+
+world.afterEvents.itemUse.subscribe((ev) => {
+  if (ev.itemStack.typeId !== "minecraft:stick") return;
+  debugOn = !debugOn;
+  ev.source.sendMessage(`debug alpha: ${debugOn ? "ON" : "OFF"}`);
+
+  if (!debugOn) {
+    for (const player of world.getPlayers()) {
+      player.onScreenDisplay.setActionBar("a0");
+    }
+    lastStep.clear();
+  }
+});
+
+system.runInterval(() => {
+  if (!debugOn) return;
+
+  const value = (Math.sin(system.currentTick * 0.05) + 1) / 2;
+  const step = Math.round(value * 20);
+
+  for (const player of world.getPlayers()) {
+    if (lastStep.get(player.id) === step) continue;
+    lastStep.set(player.id, step);
+    player.onScreenDisplay.setActionBar(`a${step}`);
+  }
+}, 1);</code></pre>
+        </details>
       </div>
     </div>
   </section>
@@ -252,6 +406,9 @@
     © 2026 Lucas Eduardo
   </footer>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
 
 </body>
 </html>
